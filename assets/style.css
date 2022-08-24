@@ -1,0 +1,16 @@
+h2, h3, label {
+    font-weight: bold;
+}
+
+.custom-gradient {
+    background: linear-gradient(0.25turn, #3f87a6, midnightblue);
+}
+
+.custom-card-body {
+    color: white;
+    background-color: midnightblue;
+}
+
+.icons {
+    width: 3em;
+}
