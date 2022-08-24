@@ -22,7 +22,7 @@
       <div class="col-3">
         <label for="basic-url">Search for a City:</label>
         <div class="input-group mb-3">
-          <input type="text" class="form-control" placeholder="San Diego" aria-label="Recipient's username" aria-describedby="button-addon2">
+          <input type="text" class="form-control" id="userInput" placeholder="San Diego" aria-label="Recipient's username" aria-describedby="button-addon2">
           <div class="input-group-append">
             <button class="btn btn-outline-secondary" type="button" id="button-addon2">Search</button>
           </div>
@@ -42,10 +42,10 @@
       <div class="col-9">
         <div class="card-body border border-secondary">
           <h2 class="card-title" id="cityName">City Name</h2>
-          <p class="card-text">Temp:</p>
-          <p class="card-text">Wind:</p>
-          <p class="card-text">Humidity:</p>
-          <p class="card-text">UV Index:</p>
+          <p class="card-text" id="temp">Temp:</p>
+          <p class="card-text" id="wind">Wind:</p>
+          <p class="card-text" id="humidity">Humidity:</p>
+          <!-- <p class="card-text">UV Index:</p> -->
         </div>
         <h3 class="card-title mt-3" id="5dayForecast">5-Day Forecast:</h3>
         <div class="card-deck">
