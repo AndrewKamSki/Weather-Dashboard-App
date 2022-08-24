@@ -80,11 +80,11 @@ function getWeather(event) {
   console.log(forecastInfo)
   })
 }
-
+// Saves search history
 function saveSearchHistory() {
   localStorage.setItem("cities", JSON.stringify(cities))
 }
-
+// Loads search history, if there is any and populates search buttons
 function loadSearchHistory() {
   var savedSearches = JSON.parse(localStorage.getItem("cities"));
   console.log(savedSearches);
@@ -96,7 +96,7 @@ function loadSearchHistory() {
     $(`#btn${j}`).text(cities[i]);
   }
 }
-
+// Loads search history and all listeners for button clicks to load data
 function init() {
   loadSearchHistory();
 
