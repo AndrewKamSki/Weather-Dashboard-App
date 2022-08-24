@@ -6,6 +6,10 @@ h2, h3, label {
     background: linear-gradient(0.25turn, #3f87a6, midnightblue);
 }
 
+.custom-search-button {
+    background-color: #3f87a6;
+    color: white;
+}
 .custom-button {
     background-color: rgb(214, 209, 209);
 }
