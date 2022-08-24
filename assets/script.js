@@ -3,10 +3,12 @@ var apiKey = "347512a67c1356d53c95e3fcd968bdac";
 
 var cities = ["Austin","Chicago","New York", "Orlando","San Francisco", "Seattle", "Denver", "Atlanta"];
 
+// Runs function to populate the weather data
 function getWeather(event) {
   event.preventDefault();
   var city = $('#userInput').val();
   var requestURL = 'https://api.openweathermap.org/data/2.5/weather?q=' + city + '&exclude=minutely,hourly&units=imperial&appid=' + apiKey;
+  // Single Day Fetch
   fetch(requestURL)
     .then(function(response) {
       return response.json();
@@ -27,7 +29,7 @@ function getWeather(event) {
       $('#wind').text('Wind: ' + wind + ' MPH');
       $('#humidity').text('Humidity: ' + humidity +' %');
     })
-
+  // 5-Day Fetch
   var requestURL2 = 'https://api.openweathermap.org/data/2.5/forecast?q=' + city + '&units=imperial&appid=' + apiKey;
   fetch(requestURL2)
   .then(function(response) {
@@ -55,7 +57,7 @@ function getWeather(event) {
     for (var i=0; i<forecastInfo.date.length; i++) {
       var j = i + 1;
       $(`#dates${j}`).text('');
-      $(`#icons${j}`).remove();
+      $(`.icons`).remove();
       $(`#temp${j}`).text('');
       $(`#wind${j}`).text('');
       $(`#humidity${j}`).text('');
