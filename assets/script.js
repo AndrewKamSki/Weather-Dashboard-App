@@ -1,6 +1,8 @@
 // API Key
 var apiKey = "347512a67c1356d53c95e3fcd968bdac";
 
+var cities = ["Austin","Chicago","New York", "Orlando","San Francisco", "Seattle", "Denver", "Atlanta"];
+
 function getWeather(event) {
   event.preventDefault();
   var city = $('#userInput').val();
@@ -52,6 +54,14 @@ function getWeather(event) {
     console.log(forecastInfo.date[0])
     for (var i=0; i<forecastInfo.date.length; i++) {
       var j = i + 1;
+      $(`#dates${j}`).text('');
+      $(`#icons${j}`).remove();
+      $(`#temp${j}`).text('');
+      $(`#wind${j}`).text('');
+      $(`#humidity${j}`).text('');
+    }
+    for (var i=0; i<forecastInfo.date.length; i++) {
+      var j = i + 1;
       var iconImg = document.createElement("img");
       iconImg.src = 'https://openweathermap.org/img/wn/' + forecastInfo.icon[i] + '@2x.png';
       iconImg.className = 'icons';
@@ -61,8 +71,71 @@ function getWeather(event) {
       $(`#wind${j}`).text('Wind: ' + forecastInfo.wind[i] + ' MPH');
       $(`#humidity${j}`).text('Humidity: ' + forecastInfo.humidity[i] +' %');
     }
+    for (var i=0; i<cities.length; i++) {
+      var j = i + 1;
+      $(`#btn${j}`).text(cities[i]);
+    }
   console.log(forecastInfo)
   })
 }
 
-$('#button-addon2').on('click', getWeather)
+function saveSearchHistory() {
+  localStorage.setItem("cities", JSON.stringify(cities))
+}
+
+function loadSearchHistory() {
+  var savedSearches = JSON.parse(localStorage.getItem("cities"));
+  console.log(savedSearches);
+  if (savedSearches !== null) {
+    cities = savedSearches;
+  }
+  for (var i=0; i<cities.length; i++) {
+    var j = i + 1;
+    $(`#btn${j}`).text(cities[i]);
+  }
+}
+
+function init() {
+  loadSearchHistory();
+
+  $('#button-addon2').on('click', function(event) {
+    event.preventDefault();
+    cities.shift();
+    cities.push($('#userInput').val());
+    saveSearchHistory();
+    })
+  $('#button-addon2').on('click', getWeather);
+  $('#btn1').on('click', function (e) {
+    $('#userInput').val( e.target.textContent);
+    getWeather(e);
+  })
+  $('#btn2').on('click', function (e) {
+    $('#userInput').val( e.target.textContent);
+    getWeather(e);
+  })
+  $('#btn3').on('click', function (e) {
+    $('#userInput').val( e.target.textContent);
+    getWeather(e);
+  })
+  $('#btn4').on('click', function (e) {
+    $('#userInput').val( e.target.textContent);
+    getWeather(e);
+  })
+  $('#btn5').on('click', function (e) {
+    $('#userInput').val( e.target.textContent);
+    getWeather(e);
+  })
+  $('#btn6').on('click', function (e) {
+    $('#userInput').val( e.target.textContent);
+    getWeather(e);
+  })
+  $('#btn7').on('click', function (e) {
+    $('#userInput').val( e.target.textContent);
+    getWeather(e);
+  })
+  $('#btn8').on('click', function (e) {
+    $('#userInput').val( e.target.textContent);
+    getWeather(e);
+  })
+}
+init();

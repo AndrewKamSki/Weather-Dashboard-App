@@ -22,29 +22,27 @@
       <div class="col-3">
         <label for="basic-url">Search for a City:</label>
         <div class="input-group mb-3">
-          <input type="text" class="form-control" id="userInput" placeholder="San Diego" aria-label="Recipient's username" aria-describedby="button-addon2">
-          <div class="input-group-append">
-            <button class="btn btn-outline-secondary" type="button" id="button-addon2">Search</button>
-          </div>
+          <input type="text" class="form-control" id="userInput" placeholder="San Diego" aria-label="Recipient's username">
+          <button class="btn btn-outline-secondary custom-search-button" type="button" id="button-addon2">Search</button>
         </div>
         <hr>
         <div class="list-group">
-          <button type="button" class="list-group-item list-group-item-action text-center">Austin</button>
-          <button type="button" class="list-group-item list-group-item-action text-center">Chicago</button>
-          <button type="button" class="list-group-item list-group-item-action text-center">New York</button>
-          <button type="button" class="list-group-item list-group-item-action text-center">Orlando</button>
-          <button type="button" class="list-group-item list-group-item-action text-center">San Francisco</button>
-          <button type="button" class="list-group-item list-group-item-action text-center">Seattle</button>
-          <button type="button" class="list-group-item list-group-item-action text-center">Denver</button>
-          <button type="button" class="list-group-item list-group-item-action text-center">Atlanta</button>
+          <button type="button" id="btn1" class="list-group-item list-group-item-action text-center custom-button">Austin</button>
+          <button type="button" id="btn2" class="list-group-item list-group-item-action text-center custom-button">Chicago</button>
+          <button type="button" id="btn3" class="list-group-item list-group-item-action text-center custom-button">New York</button>
+          <button type="button" id="btn4" class="list-group-item list-group-item-action text-center custom-button">Orlando</button>
+          <button type="button" id="btn5" class="list-group-item list-group-item-action text-center custom-button">San Francisco</button>
+          <button type="button" id="btn6" class="list-group-item list-group-item-action text-center custom-button">Seattle</button>
+          <button type="button" id="btn7" class="list-group-item list-group-item-action text-center custom-button">Denver</button>
+          <button type="button" id="btn8" class="list-group-item list-group-item-action text-center custom-button">Atlanta</button>
         </div>
       </div>
       <div class="col-9">
         <div class="card-body border border-secondary">
-          <h2 class="card-title" id="cityName">City Name</h2>
-          <p class="card-text" id="temp">Temp:</p>
-          <p class="card-text" id="wind">Wind:</p>
-          <p class="card-text" id="humidity">Humidity:</p>
+          <h2 class="card-title" id="cityName"></h2>
+          <p class="card-text" id="temp"></p>
+          <p class="card-text" id="wind"></p>
+          <p class="card-text" id="humidity"></p>
           <!-- <p class="card-text">UV Index:</p> -->
         </div>
         <h3 class="card-title mt-3" id="5dayForecast">5-Day Forecast:</h3>
